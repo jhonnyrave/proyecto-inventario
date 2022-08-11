@@ -1,5 +1,4 @@
 <h2>Admin producto</h2>
-
 <a href="<?=base_url?>productos/registro" class="btn btn-primary mb- 2">
 Crear producto</a>
 

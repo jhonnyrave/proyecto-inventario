@@ -8,4 +8,3 @@
   
   RewriteRule ^(.*)/(.*) index.php?controlador=$1&action=$2
 </IfModule>
-

@@ -11,18 +11,18 @@
         <main class="d-flex w-100">
             <!-- Menu lateral -->
             <div class="d-flex flex-column p-3 text-white bg-dark" style="width: 280px; height:100vh">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-4">Tienda de productos</span>
+                <a href="<?=base_url?>" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <h1 class="fs-4">Cafetería</h1>
                 </a>
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active" aria-current="page">
+                        <a href="<?=base_url?>" class="nav-link text-white" aria-current="page">
                         Productos
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link text-white">
+                        <a href="<?= base_url."venta/index" ?>" class="nav-link text-white">
                         Ventas
                         </a>
                     </li>

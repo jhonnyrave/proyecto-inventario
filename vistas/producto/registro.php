@@ -54,12 +54,8 @@
 </form>
 
 <?php
-if(isset($_SESSION['register']) && $_SESSION['register']):  ?>
+if(isset($respuesta)):  ?>
   <div class="bg bg-success text-white w-25 p-2">
-    <strong>Producto ingresado</strong>
-  </div>
-<?php else: ?>
-  <div class="bg bg-danger text-white w-25 p-2">
-    <strong>Ha ocurrido un error</strong>
+    <strong><?= $respuesta ?></strong>
   </div>
 <?php endif; ?>

@@ -3,6 +3,6 @@
 class errorControlador
 {
     public function index(){
-        echo "<h1>La pagina no existe</h1>";
+        echo "<h2>La pagina no existe</h2>";
     }
 }

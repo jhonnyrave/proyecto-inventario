@@ -31,9 +31,9 @@ class productosControlador
             
             $result = $producto->guardar();
             if($result){
-                echo "registro completado";
+                $respuesta = "registro completado";
             }else{
-                echo "Ha ocurrido un error";
+                $respuesta = "Ha ocurrido un error2";
             }
             header("Location:" .base_url.'productos/index');
         }else {
@@ -67,6 +67,7 @@ class productosControlador
         $actual = true;
         require_once 'vistas/producto/registro.php'; 
     }
+    
     public function modificar(){
         $id=$_GET['id'];
         $post = (isset($_POST['nombre']) && !empty($_POST['nombre'])) &&
