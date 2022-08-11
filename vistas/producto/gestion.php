@@ -1,7 +1,7 @@
 <h2>Admin producto</h2>
 
-<a href="<?=base_url?>productos/registro" class="btn btn-primary">
-crear producto</a>
+<a href="<?=base_url?>productos/registro" class="btn btn-primary mb- 2">
+Crear producto</a>
 
 <table class="table">
     <thead>
@@ -14,6 +14,7 @@ crear producto</a>
             <th>Categoria</th>
             <th>Stock</th>
             <th>Fecha</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -27,12 +28,11 @@ crear producto</a>
             <td><?=$pro->categoria;?></td>
             <td><?=$pro->stock;?></td>
             <td><?=$pro->fecha_creacion;?></td>
+            <td>
+            <a class="btn btn-primary" href="<?=base_url?>productos/actualizar&id=<?=$pro->id;?>">Actualizar</a>
+                <a class="btn btn-danger" href="<?=base_url?>productos/eliminar&id=<?=$pro->id;?>">Eliminar</a></td>
         </tr>
-        <tr>
-            <td scope="row"></td>
-            <td></td>
-            <td></td>
-        </tr>
+
         <?php endwhile;?>
     </tbody>
 </table>

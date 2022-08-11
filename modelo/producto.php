@@ -2,6 +2,7 @@
 
 class Producto
 {
+    public $id;
     public $nombre;
     public $referencia;
     public $precio;
@@ -12,24 +13,56 @@ class Producto
     private $db;
 
     public function __construct(){
-        $this->db = Database::conectar();
+        $this->db=Database::conectar();
     }
 
     public function guardar(){
-        $sql = "INSERT INTO productos VALUES ('','$this->nombre','$this->referencia',
+        $sql="INSERT INTO productos VALUES ('','$this->nombre','$this->referencia',
         $this->precio,$this->peso,'$this->categoria',$this->stock,'$this->fecha')";
-        $save = $this->db->query($sql);
+        $ejecuta_query=$this->db->query($sql);
 
-        $result = false;
-        if($save){
-            $result = true;
+        $resultado=false;
+        if($ejecuta_query){
+            $resultado=true;
         }
-        return $result;
+        return $resultado;
     }
 
     public function listar(){
-        $sql = "SELECT * FROM productos order by id";
-        $productos = $this->db->query($sql);
-        return $productos;
+        $sql="SELECT * FROM productos order by id";
+        $ejecuta_query=$this->db->query($sql);
+        return $ejecuta_query;
+    }
+
+    public function listar_id($id){
+        $sql="SELECT * FROM productos WHERE id='$id'";
+        $ejecuta_query=$this->db->query($sql);
+        return $ejecuta_query;
+    }
+
+    public function eliminar($id){
+        $sql="DELETE FROM productos WHERE id='$id'";
+        $ejecuta_query=$this->db->query($sql);
+        return $ejecuta_query;
+
+        $resultado=false;
+        if($ejecuta_query){
+            $resultado=true;
+        }
+        return $resultado;
+    }
+
+    public function actualizar(){
+        $sql="UPDATE productos SET nombre='$this->nombre', referencia='$this->referencia',
+        precio=$this->precio, peso=$this->peso, categoria='$this->categoria', 
+        stock=$this->stock, fecha_creacion='$this->fecha' WHERE id='$this->id'";
+        $ejecuta_query=$this->db->query($sql);
+        return $ejecuta_query;
+
+        $resultado=false;
+        if($ejecuta_query){
+            $resultado=true;
+        }
+        return $resultado;
     }
 }
