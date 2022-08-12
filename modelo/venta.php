@@ -32,7 +32,7 @@ class Venta {
 
     public function actualizarStock($id, $nuevo_stock){
         $sql="UPDATE productos SET stock='$nuevo_stock', 
-        fecha_creacion='$this->fecha' WHERE id='$id'";
+        fecha_creacion=NOW() WHERE id='$id'";
         $ejecuta_query=$this->db->query($sql);
         return $ejecuta_query;
 
