@@ -42,7 +42,6 @@ class ventaControlador
             }else{
                 echo "<script type=\"text/javascript\">window.alert('Ocurrió un error');window.location.href = 'index';</script>"; 
             }
-            header("Location:" .base_url.'venta/index');
         }else {
         header("Location:" .base_url.'venta/index');
         echo "registros vacios";
