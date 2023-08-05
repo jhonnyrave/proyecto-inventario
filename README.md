@@ -8,9 +8,9 @@ Motor de base de datos: MySQL.
 
 ## Instalación
 
-1. Importar la base de datos inventario, que se encuentra en el directorio script.
-2. Configurar las credenciales en el archivo db.php que esta en el directorio config.
-3. Clonar el repositorio con: git clone https://github.com/jhonnyrave/proyecto-inventario.git
+1. Importar la base de datos cafeteria, que se encuentra en el directorio [script](./script/).
+2. Configurar las credenciales en el archivo Database.php que esta en el directorio [Config](./Config/).
+3. Clonar el repositorio con: git clone https://github.com/jhonnyrave/proyecto-inventario
 
 ## Consultas
 

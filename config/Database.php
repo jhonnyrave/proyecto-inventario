@@ -5,11 +5,11 @@ class Database
     private $pdo;
 
     // Configuración de la base de datos
-    private $host = 'localhost'; // Cambiar si tu base de datos está en un servidor remoto
+    private $host = 'localhost';
     private $db_name = 'cafeteria';
     private $username = 'root';
     private $password = '';
-    private $charset = 'utf8mb4'; // Cambiar según la codificación que uses
+    private $charset = 'utf8mb4';
 
     public function __construct()
     {
