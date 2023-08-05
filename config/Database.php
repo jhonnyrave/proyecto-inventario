@@ -56,5 +56,4 @@ class Database
         }
     }
 
-    // Otros métodos útiles para transacciones, etc. se pueden agregar según sea necesario.
 }

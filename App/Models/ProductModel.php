@@ -81,6 +81,4 @@ class ProductModel
         }
     }
 
-    // Resto de métodos para actualizar, obtener un producto por ID, etc.
-    // ...
 }
