@@ -25,6 +25,21 @@ class VentaModel
         }
     }
 
+    public function listarVenta()
+    {
+        try {
+            // Realiza una consulta para obtener todas las ventas
+            $query = "SELECT v.id, v.fecha, v.cantidad, p.nombre_producto, p.precio,p.stock
+            FROM venta v
+            JOIN productos p ON v.id_producto = p.id";
+            $stmt = $this->db->query($query);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo 'Error al obtener la lista de ventas: ' . $e->getMessage();
+            exit;
+        }
+    }
+
     public function listar_id($id)
     {
         try {
@@ -53,19 +68,6 @@ class VentaModel
         }
     }
 
-    public function eliminar($id)
-    {
-        try {
-            // Realiza una consulta para eliminar un producto por su ID
-            $query = "DELETE FROM productos WHERE id = ?";
-            $stmt = $this->db->prepare($query);
-            $stmt->execute([$id]);
-            return true;
-        } catch (PDOException $e) {
-            echo 'Error al eliminar el producto: ' . $e->getMessage();
-            return false;
-        }
-    }
 
     public function actualizarStock($id, $nuevo_stock)
     {
@@ -86,21 +88,4 @@ class VentaModel
         }
     }
     
-
-    public function actualizar($producto)
-    {
-        try {
-            // Realiza una consulta para actualizar el producto en la base de datos
-            $query = "UPDATE productos SET nombre_producto = ?, referencia = ?, precio = ?, peso = ?, categoria = ?, stock = ?, fecha_creacion = ? WHERE id = ?";
-            $stmt = $this->db->prepare($query);
-            $stmt->execute([$producto->nombre, $producto->referencia, $producto->precio, $producto->peso, $producto->categoria, $producto->stock, $producto->fecha, $producto->id]);
-            return true;
-        } catch (PDOException $e) {
-            echo 'Error al actualizar el producto: ' . $e->getMessage();
-            return false;
-        }
-    }
-
-    // Resto de métodos para actualizar, obtener un producto por ID, etc.
-    // ...
 }
