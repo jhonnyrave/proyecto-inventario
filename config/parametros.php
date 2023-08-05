@@ -1,5 +1,5 @@
 <?php
 
-define("base_url","http://localhost/inventarios/");
-define("controller_default","productosControlador");
+define("base_url","http://localhost/proyecto-inventario/");
+define("controller_default","ProductController");
 define("action_default","index");
